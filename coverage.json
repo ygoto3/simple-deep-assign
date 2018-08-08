@@ -1,0 +1,17 @@
+{
+  "coverage": "100%",
+  "expectCount": 5,
+  "actualCount": 5,
+  "files": {
+    "simple-deep-assign/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "simple-deep-assign/simpleDeepAssign.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    }
+  }
+}

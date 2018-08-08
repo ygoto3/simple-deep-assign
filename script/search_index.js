@@ -1,0 +1,80 @@
+window.esdocSearchIndex = [
+  [
+    "simple-deep-assign/simple-deep-assign/simpledeepassign.js~deepassign",
+    "function/index.html#static-function-deepAssign",
+    "<span>deepAssign</span> <span class=\"search-result-import-path\">simple-deep-assign/simple-deep-assign/simpleDeepAssign.js</span>",
+    "function"
+  ],
+  [
+    "simple-deep-assign/simple-deep-assign/simpledeepassign.js~deepassignobject",
+    "function/index.html#static-function-deepAssignObject",
+    "<span>deepAssignObject</span> <span class=\"search-result-import-path\">simple-deep-assign/simple-deep-assign/simpleDeepAssign.js</span>",
+    "function"
+  ],
+  [
+    "simple-deep-assign/simple-deep-assign/simpledeepassign.js~isarray",
+    "function/index.html#static-function-isArray",
+    "<span>isArray</span> <span class=\"search-result-import-path\">simple-deep-assign/simple-deep-assign/simpleDeepAssign.js</span>",
+    "function"
+  ],
+  [
+    "simple-deep-assign/simple-deep-assign/simpledeepassign.js~isobject",
+    "function/index.html#static-function-isObject",
+    "<span>isObject</span> <span class=\"search-result-import-path\">simple-deep-assign/simple-deep-assign/simpleDeepAssign.js</span>",
+    "function"
+  ],
+  [
+    "simple-deep-assign/simple-deep-assign/index.js~simpledeepassign",
+    "function/index.html#static-function-simpleDeepAssign",
+    "<span>simpleDeepAssign</span> <span class=\"search-result-import-path\">simple-deep-assign/simple-deep-assign/index.js</span>",
+    "function"
+  ],
+  [
+    "",
+    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber64",
+    "deepAssignObject",
+    "test"
+  ],
+  [
+    "",
+    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber10",
+    "isArray",
+    "test"
+  ],
+  [
+    "",
+    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber39",
+    "isObject",
+    "test"
+  ],
+  [
+    "simple-deep-assign/index.js",
+    "file/simple-deep-assign/index.js.html",
+    "simple-deep-assign/index.js",
+    "file"
+  ],
+  [
+    "simple-deep-assign/index.test.js",
+    "test-file/simple-deep-assign/index.test.js.html",
+    "simple-deep-assign/index.test.js",
+    "testFile"
+  ],
+  [
+    "simple-deep-assign/simpledeepassign.js",
+    "file/simple-deep-assign/simpleDeepAssign.js.html",
+    "simple-deep-assign/simpleDeepAssign.js",
+    "file"
+  ],
+  [
+    "simple-deep-assign/simpledeepassign.test.js",
+    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html",
+    "simple-deep-assign/simpleDeepAssign.test.js",
+    "testFile"
+  ],
+  [
+    "",
+    "test-file/simple-deep-assign/index.test.js.html#lineNumber4",
+    "simpleDeepAssign",
+    "test"
+  ]
+]

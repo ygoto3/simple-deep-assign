@@ -1,0 +1,320 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "simple-deep-assign/index.js",
+    "content": "// @flow\nconst { deepAssign }= require('./simpleDeepAssign');\n\n/**\n * Recursively copy the values of all enumerable own properties from a source item or more to a target item if the both items are objects\n * @public\n * @param {Object} target - a target object\n * @param {Object} source - a source object\n * @param {...Object} [rest] - the rest of source objects\n * @example\n * simpleDeepAssign({ a: 'a' }, { b: 'b' }, { c: [ 1, 2 ] }, { d: { a: 'a' } }, { d: { b: 'b' } });\n * // { a: 'a', b: 'b', c: [ 1, 2 ], d: { a: 'a', b: 'b' } }\n */\nfunction simpleDeepAssign(target, source, ...rest) {\n  if (!source) return;\n  deepAssign(target, source);\n  simpleDeepAssign(target, ...rest);\n}\n\nmodule.exports = simpleDeepAssign;\n",
+    "static": true,
+    "longname": "/Users/a12915/workspace/simple-deep-assign/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "function",
+    "name": "simpleDeepAssign",
+    "memberof": "simple-deep-assign/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "simple-deep-assign/index.js~simpleDeepAssign",
+    "access": "public",
+    "export": true,
+    "importPath": "simple-deep-assign/simple-deep-assign/index.js",
+    "importStyle": "simpleDeepAssign",
+    "description": "Recursively copy the values of all enumerable own properties from a source item or more to a target item if the both items are objects",
+    "examples": [
+      "simpleDeepAssign({ a: 'a' }, { b: 'b' }, { c: [ 1, 2 ] }, { d: { a: 'a' } }, { d: { b: 'b' } });\n// { a: 'a', b: 'b', c: [ 1, 2 ], d: { a: 'a', b: 'b' } }"
+    ],
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "target",
+        "description": "a target object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "source",
+        "description": "a source object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "...Object"
+        ],
+        "spread": true,
+        "optional": true,
+        "name": "rest",
+        "description": "the rest of source objects"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 2,
+    "kind": "file",
+    "name": "simple-deep-assign/simpleDeepAssign.js",
+    "content": "// @flow\n\n/**\n * Check if it is an array\n * @private\n * @param {*} item - an item to check\n * @return {boolean} array or not\n * @example\n * isArray([0, 1, 2]) // true\n */\nfunction isArray(item/*: any*/)/*: boolean*/ {\n  return {}.toString.call(item) === '[object Array]';\n}\n\n/**\n * Check if it is an object\n * @private\n * @param {*} item - an item to check\n * @return {boolean} object or not\n * @example\n * isObject({ a: 'a' }) // true\n */\nfunction isObject(item/*: any*/)/*: boolean*/ {\n  return typeof item === 'object' && item !== null && !isArray(item);\n}\n\n/**\n * Recursively copy the values of all enumerable own properties from a source object to a target object \n * @private\n * @param {Object} target - a target object\n * @param {Object} source - a source object\n * @example\n * deepAssignObject({ a: 'a', b: 'b' }, { b: 'B', c: 'c' });\n * // { a: 'a', b: 'B', c: 'c' }\n */\nfunction deepAssignObject(target/*: Object*/, source/*: Object*/)/*: void*/ {\n  Object.keys(source).forEach(key => {\n    if (isObject(target[key]) && isObject(source[key])) {\n      deepAssignObject(target[key], source[key]);\n      return;\n    }\n    target[key] = source[key];\n  });\n}\n\n/**\n * Recursively copy the values of all enumerable own properties from a source item to a target item if the both items are objects\n * @private\n * @param {Object} target - a target object\n * @param {Object} source - a source object\n * @example\n * deepAssign({ a: 'a', b: 'b' }, { b: 'B', c: 'c' });\n * // { a: 'a', b: 'B', c: 'c' }\n */\nfunction deepAssign(target/*: any*/, source/*: any*/)/*: void*/ {\n  if (!isObject(target) || !isObject(source)) return;\n  deepAssignObject(target, source);\n}\n\nmodule.exports = {\n  isArray,\n  isObject,\n  deepAssignObject,\n  deepAssign,\n};\n",
+    "static": true,
+    "longname": "/Users/a12915/workspace/simple-deep-assign/simpleDeepAssign.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 3,
+    "kind": "function",
+    "name": "isArray",
+    "memberof": "simple-deep-assign/simpleDeepAssign.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "simple-deep-assign/simpleDeepAssign.js~isArray",
+    "access": "private",
+    "export": true,
+    "importPath": "simple-deep-assign/simple-deep-assign/simpleDeepAssign.js",
+    "importStyle": "{isArray}",
+    "description": "Check if it is an array",
+    "examples": [
+      "isArray([0, 1, 2]) // true"
+    ],
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "item",
+        "description": "an item to check"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "array or not"
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "function",
+    "name": "isObject",
+    "memberof": "simple-deep-assign/simpleDeepAssign.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "simple-deep-assign/simpleDeepAssign.js~isObject",
+    "access": "private",
+    "export": true,
+    "importPath": "simple-deep-assign/simple-deep-assign/simpleDeepAssign.js",
+    "importStyle": "{isObject}",
+    "description": "Check if it is an object",
+    "examples": [
+      "isObject({ a: 'a' }) // true"
+    ],
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "item",
+        "description": "an item to check"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "object or not"
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "function",
+    "name": "deepAssignObject",
+    "memberof": "simple-deep-assign/simpleDeepAssign.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "simple-deep-assign/simpleDeepAssign.js~deepAssignObject",
+    "access": "private",
+    "export": true,
+    "importPath": "simple-deep-assign/simple-deep-assign/simpleDeepAssign.js",
+    "importStyle": "{deepAssignObject}",
+    "description": "Recursively copy the values of all enumerable own properties from a source object to a target object ",
+    "examples": [
+      "deepAssignObject({ a: 'a', b: 'b' }, { b: 'B', c: 'c' });\n// { a: 'a', b: 'B', c: 'c' }"
+    ],
+    "lineNumber": 36,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "target",
+        "description": "a target object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "source",
+        "description": "a source object"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 6,
+    "kind": "function",
+    "name": "deepAssign",
+    "memberof": "simple-deep-assign/simpleDeepAssign.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "simple-deep-assign/simpleDeepAssign.js~deepAssign",
+    "access": "private",
+    "export": true,
+    "importPath": "simple-deep-assign/simple-deep-assign/simpleDeepAssign.js",
+    "importStyle": "{deepAssign}",
+    "description": "Recursively copy the values of all enumerable own properties from a source item to a target item if the both items are objects",
+    "examples": [
+      "deepAssign({ a: 'a', b: 'b' }, { b: 'B', c: 'c' });\n// { a: 'a', b: 'B', c: 'c' }"
+    ],
+    "lineNumber": 55,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "target",
+        "description": "a target object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "source",
+        "description": "a source object"
+      }
+    ],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "# simple-deep-assign\n\nA very simple alternative of `Object.assign()` that recursively copies objects' elements to a target object.  Recursion is only applied to a pure object.  The other types of elements are just replaced with source elements.\n\nInstall\n---\n\n```sh\n$ npm i simple-deep-assign\n```\n\nUsage\n---\n\n```js\nimport deepAssign from 'simple-deep-assign';\n\nconst target = { a: 'a' };\ndeepAssign(target, { b: 'b' }, { c: [ 1, 2 ] }, { d: { a: 'a' } }, { d: { b: 'b' } });\n\ntarget; // { a: 'a', b: 'b', c: [ 1, 2 ], d: { a: 'a', b: 'b' } }\n```\n\nAPI Document\n---\n\n[https://ygoto3.github.io/simple-deep-assign/function/index.html#static-function-simpleDeepAssign](https://ygoto3.github.io/simple-deep-assign/function/index.html#static-function-simpleDeepAssign)\n\n",
+    "longname": "/Users/a12915/workspace/simple-deep-assign/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "__docId__": 7,
+    "kind": "testFile",
+    "name": "simple-deep-assign/index.test.js",
+    "content": "const test = require('ava');\nconst simpleDeepAssign = require('./index');\n\ntest('simpleDeepAssign', t => {\n  var target = {};\n\n  simpleDeepAssign(target, 0);\n  t.deepEqual(target, {});\n\n  simpleDeepAssign(target, 'a');\n  t.deepEqual(target, {});\n\n  simpleDeepAssign(target, [0, 1]);\n  t.deepEqual(target, {});\n\n  simpleDeepAssign(target, null);\n  t.deepEqual(target, {});\n\n  simpleDeepAssign(target, void 0);\n  t.deepEqual(target, {});\n\n  simpleDeepAssign(target, { a: 'a' }, { b: 'b' }, { c: [ 1, 2 ] }, { d: { a: 'a' } }, { d: { b: 'b' } });\n  t.deepEqual(target, {\n    a: 'a',\n    b: 'b',\n    c: [ 1, 2 ],\n    d: { a: 'a', b: 'b' },\n  });\n});\n",
+    "static": true,
+    "longname": "/Users/a12915/workspace/simple-deep-assign/index.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 8,
+    "kind": "test",
+    "name": "test0",
+    "testId": 0,
+    "memberof": "simple-deep-assign/index.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "simple-deep-assign/index.test.js~test0",
+    "access": null,
+    "description": "simpleDeepAssign",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 9,
+    "kind": "testFile",
+    "name": "simple-deep-assign/simpleDeepAssign.test.js",
+    "content": "// @flow\nconst test = require('ava');\nconst {\n  isArray,\n  isObject,\n  deepAssignObject,\n  simpleDeepAssign,\n} = require('./simpleDeepAssign');\n\ntest('isArray', t => {\n  var item;\n  var actual;\n\n  item = [];\n  actual = isArray(item);\n  t.true(actual);\n\n  item = [1, 2, 3, 4];\n  actual = isArray(item);\n  t.true(actual);\n\n  item = [{}, { '0': 1, '1': 2, '2': 3, '3': 4 }];\n  actual = isArray(item);\n  t.true(actual);\n\n  item = { '0': 1, '1': 2, '2': 3, '3': 4 };\n  actual = isArray(item);\n  t.false(actual);\n\n  item = null;\n  actual = isArray(item);\n  t.false(actual);\n\n  item = void 0;\n  actual = isArray(item);\n  t.false(actual);\n});\n\ntest('isObject', t => {\n  var item;\n  var actual;\n\n  item = [1, 2, 3, 4];\n  actual = isObject(item);\n  t.false(actual);\n\n  item = {};\n  actual = isObject(item);\n  t.true(actual);\n\n  item = { '0': 1, '1': 2, '2': 3, '3': 4 };\n  actual = isObject(item);\n  t.true(actual);\n\n  item = null;\n  actual = isObject(item);\n  t.false(actual);\n\n  item = void 0;\n  actual = isObject(item);\n  t.false(actual);\n});\n\ntest('deepAssignObject', t => {\n  function func() {}\n  const createTarget = () => ({\n    a: 1,\n    b: 'b',\n    c: {\n      a: 1,\n      b: 'b',\n    },\n    d: [\n      0, {\n        a: 1,\n        b: 'b'\n      },\n    ],\n    e: func,\n  });\n  var target;\n\n  target = createTarget();\n  deepAssignObject(target, { a: 2 });\n  t.deepEqual(target, {\n    a: 2,\n    b: 'b',\n    c: {\n      a: 1,\n      b: 'b',\n    },\n    d: [\n      0, {\n        a: 1,\n        b: 'b'\n      },\n    ],\n    e: func,\n  });\n\n  target = createTarget();\n  deepAssignObject(target, { a: { a: 1, b: 'b' }, b: 'c' });\n  t.deepEqual(target, {\n    a: { a: 1, b: 'b' },\n    b: 'c',\n    c: {\n      a: 1,\n      b: 'b',\n    },\n    d: [\n      0, {\n        a: 1,\n        b: 'b'\n      },\n    ],\n    e: func,\n  });\n\n  target = createTarget();\n  deepAssignObject(target, { a: 'a', b: [ 0, 1, 2 ], c: { a: 2 } });\n  t.deepEqual(target, {\n    a: 'a',\n    b: [ 0, 1, 2 ],\n    c: {\n      a: 2,\n      b: 'b',\n    },\n    d: [\n      0, {\n        a: 1,\n        b: 'b'\n      },\n    ],\n    e: func,\n  });\n\n  target = createTarget();\n  const fn = () => {};\n  deepAssignObject(target, { d: [ 0, 1, 2 ], e: { fn } });\n  t.deepEqual(target, {\n    a: 1,\n    b: 'b',\n    c: {\n      a: 1,\n      b: 'b',\n    },\n    d: [ 0, 1, 2 ],\n    e: { fn },\n  });\n});\n",
+    "static": true,
+    "longname": "/Users/a12915/workspace/simple-deep-assign/simpleDeepAssign.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 10,
+    "kind": "test",
+    "name": "test1",
+    "testId": 1,
+    "memberof": "simple-deep-assign/simpleDeepAssign.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "simple-deep-assign/simpleDeepAssign.test.js~test1",
+    "access": null,
+    "description": "isArray",
+    "lineNumber": 10
+  },
+  {
+    "__docId__": 11,
+    "kind": "test",
+    "name": "test2",
+    "testId": 2,
+    "memberof": "simple-deep-assign/simpleDeepAssign.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "simple-deep-assign/simpleDeepAssign.test.js~test2",
+    "access": null,
+    "description": "isObject",
+    "lineNumber": 39
+  },
+  {
+    "__docId__": 12,
+    "kind": "test",
+    "name": "test3",
+    "testId": 3,
+    "memberof": "simple-deep-assign/simpleDeepAssign.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "simple-deep-assign/simpleDeepAssign.test.js~test3",
+    "access": null,
+    "description": "deepAssignObject",
+    "lineNumber": 64
+  }
+]
