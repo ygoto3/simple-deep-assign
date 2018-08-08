@@ -11,7 +11,7 @@ const { deepAssign }= require('./simpleDeepAssign');
  * simpleDeepAssign({ a: 'a' }, { b: 'b' }, { c: [ 1, 2 ] }, { d: { a: 'a' } }, { d: { b: 'b' } });
  * // { a: 'a', b: 'b', c: [ 1, 2 ], d: { a: 'a', b: 'b' } }
  */
-function simpleDeepAssign(target, source, ...rest) {
+function simpleDeepAssign(target/*: Object*/, source/*: Object*/, ...rest/*: Object[]*/)/*: void*/ {
   if (!source) return;
   deepAssign(target, source);
   simpleDeepAssign(target, ...rest);

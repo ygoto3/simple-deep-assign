@@ -1,4 +1,4 @@
 // @flow
 
 
-declare module.exports: (target: any, source: any) => void;
+declare module.exports: (target: Object, source: Object, ...rest: Array<Object>) => void;

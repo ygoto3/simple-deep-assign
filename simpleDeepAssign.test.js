@@ -4,7 +4,6 @@ const {
   isArray,
   isObject,
   deepAssignObject,
-  simpleDeepAssign,
 } = require('./simpleDeepAssign');
 
 test('isArray', t => {
