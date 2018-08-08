@@ -52,7 +52,7 @@ const { deepAssign }= require(&apos;./simpleDeepAssign&apos;);
  * simpleDeepAssign({ a: &apos;a&apos; }, { b: &apos;b&apos; }, { c: [ 1, 2 ] }, { d: { a: &apos;a&apos; } }, { d: { b: &apos;b&apos; } });
  * // { a: &apos;a&apos;, b: &apos;b&apos;, c: [ 1, 2 ], d: { a: &apos;a&apos;, b: &apos;b&apos; } }
  */
-function simpleDeepAssign(target, source, ...rest) {
+function simpleDeepAssign(target/*: Object*/, source/*: Object*/, ...rest/*: Object[]*/)/*: void*/ {
   if (!source) return;
   deepAssign(target, source);
   simpleDeepAssign(target, ...rest);

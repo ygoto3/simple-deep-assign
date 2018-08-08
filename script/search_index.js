@@ -31,19 +31,19 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber64",
+    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber63",
     "deepAssignObject",
     "test"
   ],
   [
     "",
-    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber10",
+    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber9",
     "isArray",
     "test"
   ],
   [
     "",
-    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber39",
+    "test-file/simple-deep-assign/simpleDeepAssign.test.js.html#lineNumber38",
     "isObject",
     "test"
   ],
