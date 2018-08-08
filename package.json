@@ -1,0 +1,43 @@
+{
+  "name": "simple-deep-assign",
+  "version": "1.0.0",
+  "description": "A very simple alternative of Object.assign() that recursively copies objects' elements to a target object. Recursion is only applied to a pure object. The other types of elements are just replaced with source elements.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.js.flow",
+    "simpleDeepAssign.js"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ygoto3/simple-deep-assign.git"
+  },
+  "keywords": [
+    "merge",
+    "object",
+    "deepmerge"
+  ],
+  "author": "Yusuke Goto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ygoto3/simple-deep-assign/issues"
+  },
+  "homepage": "https://ygoto3.github.io/simple-deep-assign/",
+  "scripts": {
+    "test": "nyc ava",
+    "type": "flow",
+    "lint": "eslint index.js simpleDeepAssign.js simpleDeepAssign.test.js",
+    "doc": "esdoc",
+    "gen-flow-files": "flow gen-flow-files ./index.js > ./index.js.flow"
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.6",
+    "esdoc": "^1.1.0",
+    "esdoc-node": "^1.0.3",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^5.3.0",
+    "flow-bin": "^0.78.0",
+    "nyc": "^12.0.2"
+  }
+}

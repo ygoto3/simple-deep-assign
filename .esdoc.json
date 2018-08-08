@@ -1,0 +1,23 @@
+{
+  "source": ".",
+  "destination": "./docs",
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "test": {
+          "source": ".",
+          "includes": [
+            "^index.test.js$",
+            "^simpleDeepAssign.test.js$"
+          ]
+        }
+      }
+    },
+    { "name": "esdoc-node" }
+  ],
+  "includes": [
+    "^index.js$",
+    "^simpleDeepAssign.js$"
+  ]
+}
