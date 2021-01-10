@@ -35,6 +35,9 @@ function isObject(item/*: any*/)/*: boolean*/ {
  */
 function deepAssignObject(target/*: Object*/, source/*: Object*/)/*: void*/ {
   Object.keys(source).forEach(key => {
+    if (key === '__proto__' || key === 'prototype' || key === 'constructor'){
+      return;
+    }
     if (isObject(target[key]) && isObject(source[key])) {
       deepAssignObject(target[key], source[key]);
       return;
